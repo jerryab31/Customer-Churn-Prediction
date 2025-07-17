@@ -1,90 +1,72 @@
-# 📊 Customer Churn Prediction using Machine Learning
 
-![Status](https://img.shields.io/badge/Streamlit-App--Coming--Soon-orange?logo=streamlit)
-![License](https://img.shields.io/badge/Machine%20Learning-LightGBM-blue?style=flat&logo=github)
+# 📉 Customer Churn Prediction
 
-An explainable machine learning project that predicts customer churn for a telecom provider. Designed with business stakeholders in mind, it balances **accuracy, interpretability, and usability**.
+This project predicts customer churn using a machine learning pipeline trained on telco data. The model uses LightGBM, Optuna hyperparameter tuning, and SHAP explainability. A Streamlit app is provided for interactive prediction.
 
----
+## 📂 Files Included
 
-## 🗂️ Project Contents
+| File Name                          | Description |
+|-----------------------------------|-------------|
+| `customer_churn_prediction.ipynb` | Jupyter notebook with full EDA, preprocessing, modeling, and SHAP |
+| `final_model_pipeline.pkl`        | Trained model pipeline including preprocessing |
+| `best_threshold.txt`              | Optimal threshold (TPR - FPR maximized) |
+| `top_20_features.json`            | Top 20 features based on SHAP importance |
+| `requirements.txt`                | Python dependencies for Streamlit Cloud |
+| `churn_app.py`                    | Streamlit app code |
 
-| File                             | Description |
-|----------------------------------|-------------|
-| `churn_app.py`                   | Streamlit app for user input and prediction |
-| `final_model_pipeline.pkl`       | Trained model pipeline (LightGBM + preprocessing) |
-| `best_threshold.txt`             | Custom threshold (0.33) for decision cutoff |
-| `top_20_features.json`           | Top 20 SHAP-ranked features |
-| `customer_churn_prediction.ipynb`| Full notebook: training, SHAP, thresholding |
-| `requirements.txt`               | Dependencies for the project |
+## 🚀 Try It Live
 
----
+🔗 [Launch the App](https://customerchurn-prediction-jerryab31.streamlit.app)
 
-## 📥 Data Source
+> Predict customer churn using a LightGBM model trained on telco data. Includes SHAP explainability and threshold tuning.
 
-The dataset used in this project is a **public telecom churn dataset**, available from:
+## 🗃️ Dataset
 
-🔗 [Kaggle - Telco Customer Churn Dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+**Telco Customer Churn Dataset** (available at: [Kaggle Dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn))
 
-It contains customer attributes like:
-- Demographics
-- Subscription details
-- Service usage
-- Monthly charges and tenure
-- Whether the customer churned
+## 💡 Features Used
 
----
+Top 20 features (based on SHAP importance) are used in the model. These include `Contract`, `tenure`, `MonthlyCharges`, `OnlineSecurity`, `InternetService`, and more.
 
-## 🚀 Run Locally
+## 📦 Setup
 
-### 1. Clone the Repository
+### 1. Clone the repo
+
 ```bash
-git clone https://github.com/your-username/customer-churn-prediction.git
+git clone https://github.com/yourusername/customer-churn-prediction.git
 cd customer-churn-prediction
+```
 
+### 2. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
+### 3. Run Streamlit app locally
+
+```bash
 streamlit run churn_app.py
+```
 
+## ☁️ Deploy on Streamlit Cloud
 
-🧠 Model Highlights
-⚡ LightGBM Classifier trained with Optuna-tuned hyperparameters
+Upload the following files to your Streamlit Cloud repo:
 
-✅ Preprocessing pipeline using ColumnTransformer
+- `churn_app.py`
+- `final_model_pipeline.pkl`
+- `best_threshold.txt`
+- `top_20_features.json`
+- `requirements.txt`
 
-🔍 Feature importance from SHAP values
+The app will auto-deploy. Add the URL in the README.
 
-🎯 Adjusted classification threshold (0.33) to improve recall for churners
+## 📌 Coming Soon
 
-🏆 Only top 20 SHAP features used in final app
+- 📊 Enhanced dashboard UI
+- 🧠 Auto retraining pipeline
+- 🔗 Database integration for real-time inputs
 
-🎛️ Streamlit App
-The app will allow users to:
+---
 
-Enter new customer details
-
-Get a churn probability
-
-Show Likely to Stay or Likely to Churn
-
-🔗 Live App URL
-Coming Soon – Will be deployed on Streamlit Cloud
-
-✨ Example Features Used
-Contract
-
-MonthlyCharges
-
-tenure
-
-InternetService, OnlineSecurity, TechSupport
-
-Full list: see top_20_features.json
-
-👤 Author
-Jerry Abraham
-Certified Lean Six Sigma Black Belt
-Machine Learning | Explainable AI | BFSI & Telecom Use Cases
-
-📄 License
-This project is for educational purposes. Feel free to fork or adapt it for learning and demonstration.
+Made with ❤️ by Jerry Abraham
