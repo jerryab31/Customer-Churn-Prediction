@@ -89,7 +89,6 @@ Full list: see top_20_features.json
 
 👤 Author
 Jerry Abraham
-Certified Lean Six Sigma Black Belt
-Machine Learning | Explainable AI | BFSI & Telecom Use Cases
+Business Transformation | LSS-BB | Machine Learning | Explainable AI | Design Thinking | RPA - UiPath
 
 
